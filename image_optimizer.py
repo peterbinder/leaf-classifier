@@ -2,6 +2,7 @@ import os
 import cv2
 import numpy as np
 
+
 def generate_leaf_contour_image(input_path, output_path, target_size=(224, 224)):
     # 1. Kép beolvasása
     img = cv2.imread(input_path)
@@ -52,14 +53,14 @@ def generate_contour_dataset(input_root, output_root, target_size=(224, 224)):
                     count_by_class[relative_path] = count_by_class.get(relative_path, 0) + 1
 
     # Eredmények kiírása
-    print(f"\n✅ Összesen {total} képet dolgoztunk fel.")
+    print(f"\nÖsszesen {total} képet dolgoztunk fel.")
     for cls, count in sorted(count_by_class.items()):
         print(f"  └── {cls}: {count} kép")
 
 
-# 🔧 Itt állítsd be az elérési útvonalakat
+#   Elérési útvonalakat
 if __name__ == "__main__":
-    input_root = "D:/Documents/Suli/PE/fejlett-kepfeldolgozas/kepek/levelek/"      # Pl. 'data/raw' vagy bármi más
-    output_root = "D:/Documents/Suli/PE/fejlett-kepfeldolgozas/kepek/f_levelek/"      # A generált képek ide kerülnek
+    input_root = "D:/Documents/Suli/PE/fejlett-kepfeldolgozas/kepek/levelek/"
+    output_root = "D:/Documents/Suli/PE/fejlett-kepfeldolgozas/kepek/f_levelek/"
 
     generate_contour_dataset(input_root, output_root)

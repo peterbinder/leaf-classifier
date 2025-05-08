@@ -46,7 +46,7 @@ def classify_leaf(model, image_data):
         print(f"{labels[i]}: {prob:.2%}")
 
 # Kép elérési út
-leaf_path = 'images/maple/Maple-Leaf-in-Fall3.jpg'
+leaf_path = 'images/oak/5613e0f4-7167-4448-8e3f-3392392ce37b.jpg'
 
 # Normál modell bemenete
 img = image.load_img(leaf_path, target_size=(224, 224))
